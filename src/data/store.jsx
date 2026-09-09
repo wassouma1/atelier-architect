@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState, useCallback } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
 
 const STORAGE_KEY = "atelier-malak:projets";
 
@@ -31,7 +37,7 @@ const seedProjects = [
         texte:
           "Le premier tiers de la façade côté mer est posé. J'ai validé sur place la teinte de la pierre avec l'entreprise avant de continuer sur les étages supérieurs.",
         images: [
-          "https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?q=80&w=1200&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1600&auto=format&fit=crop",
         ],
         commentaires: [],
       },
@@ -210,7 +216,9 @@ export function StoreProvider({ children }) {
     ajouterCommentaire,
   };
 
-  return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>;
+  return (
+    <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
+  );
 }
 
 export function useStore() {
